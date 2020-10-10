@@ -1,6 +1,5 @@
 def solution(name):
     joystick = [min(ord(a) - ord('A'),ord('Z') - ord(a) + 1) for a in name]
-    cnt = 0
     answer = 0
     index = 0
     # for a in name :
