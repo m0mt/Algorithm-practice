@@ -14,8 +14,12 @@ def floydWarshall(a):
     for k in range(number):
         # i = 출발 노드
         for i in range(number):
+            if k == i : # 거쳐가는 노드와 출발 노드가 겹쳐지는 부분은 바꿀 필요가 없음
+                continue
             # j = 도착 노드
             for j in range(number):
+                if i == j : # k == i 와 마찬가지
+                    continue
                 if a[i][k] + a[k][j] < a[i][j] :
                     a[i][j] = a[i][k] + a[k][j]
     return a
